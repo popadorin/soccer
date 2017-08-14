@@ -1,5 +1,6 @@
 package mypackage;
 
+import models.Game;
 import models.Goal;
 import models.Player;
 import models.Team;
@@ -8,6 +9,8 @@ import java.util.ArrayList;
 
 public class League {
     public static void main(String[] args) {
+        Game game = new Game();
+
         Player p1 = new Player("Messi");
         Player p2 = new Player("Busquets");
         Player p3 = new Player("Iniesta");
@@ -16,7 +19,6 @@ public class League {
         Player p6 = new Player("Bale");
 
         Team t1 = new Team("Barcelona", new ArrayList<Player>());
-
         Team t2 = new Team("Real Madrid", new ArrayList<Player>());
 
         t1.players.add(p1);
@@ -27,6 +29,17 @@ public class League {
         t2.players.add(p5);
         t2.players.add(p6);
 
+        Goal g1 = new Goal(t1, p1, 20);
+        Goal g2 = new Goal(t1, p1, 65);
+        Goal g3 = new Goal(t2, p4, 80);
+
+        ArrayList<Goal> goals = new ArrayList<Goal>();
+        goals.add(g1);
+        goals.add(g2);
+        goals.add(g3);
+
+        game = new Game(t1, t2, goals);
+
         System.out.println("Barcelona: ");
         for (Player p : t1.players) {
             System.out.println(p.name);
@@ -36,28 +49,6 @@ public class League {
         for (Player p : t2.players) {
             System.out.println(p.name);
         }
-
-
-        Goal g1 = new Goal();
-        Goal g2 = new Goal();
-        Goal g3 = new Goal();
-
-        g1.team = t1;
-        g1.player = p1;
-        g1.time = 20.0;
-
-        g2.team = t1;
-        g2.player = p1;
-        g2.time = 29.0;
-
-        g3.team = t2;
-        g3.player = p4;
-        g3.time = 80;
-
-        ArrayList<Goal> goals = new ArrayList<Goal>();
-        goals.add(g1);
-        goals.add(g2);
-        goals.add(g3);
 
         System.out.println(" ");
         System.out.println("Goals:");
