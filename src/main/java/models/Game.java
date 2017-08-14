@@ -7,11 +7,22 @@ public class Game {
     public Team awayTeam;
     public ArrayList<Goal> goals;
 
-    public Game() {}
+    public void printResults() {
+        System.out.println("Barcelona: ");
+        for (Player p : homeTeam.players) {
+            System.out.println(p.name);
+        }
 
-    public Game(Team homeTeam, Team awayTeam, ArrayList<Goal> goals) {
-        this.homeTeam = homeTeam;
-        this.awayTeam = awayTeam;
-        this.goals = goals;
+        System.out.println("\nReal Madrid: ");
+        for (Player p : awayTeam.players) {
+            System.out.println(p.name);
+        }
+
+        System.out.println("\nGoals:");
+
+        for (Goal goal : goals) {
+            System.out.println("Goal scored after " + goal.time + " mins by " + goal.player + " of the " +
+                    goal.team.name + " team.");
+        }
     }
 }
