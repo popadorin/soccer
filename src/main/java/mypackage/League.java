@@ -8,19 +8,17 @@ import java.util.ArrayList;
 
 public class League {
     public static void main(String[] args) {
-        Player p1 = new Player();
-        p1.name = "Messi";
-        Player p2 = new Player();
-        p2.name = "Busquets";
-        Player p3 = new Player();
-        p3.name = "Iniesta";
-        Player p4 = new Player();
+        Player p1 = new Player("Messi");
 
-        p4.name = "Ronaldo";
-        Player p5 = new Player();
-        p5.name = "Modric";
-        Player p6 = new Player();
-        p6.name = "Bale";
+        Player p2 = new Player("Busquets");
+
+        Player p3 = new Player("Iniesta");
+
+        Player p4 = new Player("Ronaldo");
+
+        Player p5 = new Player("Modric");
+
+        Player p6 = new Player("Bale");
 
         Team t1 = new Team();
         t1.name = "Barcelona";
@@ -73,11 +71,10 @@ public class League {
         System.out.println(" ");
         System.out.println("Goals:");
 
-        for(Goal goal : goals) {
-            System.out.println("Goal scored after " + goal.time + " mins by " + goal.player.name + " of the " + goal.team.name + " team.");
+        for (Goal goal : goals) {
+            System.out.println("Goal scored after " + goal.time + " mins by " + goal.player + " of the " +
+                    goal.team.name + " team.");
         }
-
-
 
     }
 }
