@@ -1,7 +1,7 @@
 package models;
 
 public class Game {
-    Team homeTeam = new Team();
-    Team awayTeam = new Team();
-    Goal goal = new Goal();
+    public Team homeTeam;
+    public Team awayTeam;
+    public Goal goal;
 }

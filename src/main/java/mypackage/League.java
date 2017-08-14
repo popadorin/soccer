@@ -9,24 +9,15 @@ import java.util.ArrayList;
 public class League {
     public static void main(String[] args) {
         Player p1 = new Player("Messi");
-
         Player p2 = new Player("Busquets");
-
         Player p3 = new Player("Iniesta");
-
         Player p4 = new Player("Ronaldo");
-
         Player p5 = new Player("Modric");
-
         Player p6 = new Player("Bale");
 
-        Team t1 = new Team();
-        t1.name = "Barcelona";
-        t1.players = new ArrayList<Player>();
+        Team t1 = new Team("Barcelona", new ArrayList<Player>());
 
-        Team t2 = new Team();
-        t2.name = "Real Madrid";
-        t2.players = new ArrayList<Player>();
+        Team t2 = new Team("Real Madrid", new ArrayList<Player>());
 
         t1.players.add(p1);
         t1.players.add(p2);
